@@ -132,7 +132,6 @@ let totalMonths = finances.length;
 
 let amount = 0;
 let total = 0;
-let greatestInc = 0;
 
 for (let i = 0; i < finances.length; i++) {
   const month = finances[i];
@@ -143,31 +142,30 @@ for (let i = 0; i < finances.length; i++) {
 
 let avgChange = (total/(totalMonths -1)).toFixed(2);
 
-// Greatest increase
+// Greatest increase & decrease
 let currentAmt = 0;
 let nextAmt = 0;
 let diffArray = [];
+let greatestInc = 0;
+let greatestDec = 0;
 
 for (let i = 0; i < (finances.length -1); i++) {
   const month = finances[i];
 
   currentAmt = month[1]; // Find current amount in array
   console.log(`currentAmt: ${currentAmt}`);
-  nextAmt = finances[i + 1][1]; // Place next array amt in variable 
+  nextAmt = finances[i + 1][1]; // Place next months profit/loss amount in variable 
   console.log(`next amount ${nextAmt}`);
   let diff = nextAmt - currentAmt; // Subtract current amount from next amount and place in variable 
   console.log(`diff: ${diff}`);
-  diffArray.push(diff); // Place the diff into an array
+  diffArray.push(diff); // Place the difference into an array
 }
 console.log(diffArray);
 greatestInc = Math.max(...diffArray); // Find the max number in the array
 console.log(`greatest increase: ${greatestInc}`);
+greatestDec = Math.min(...diffArray); // Find the min number in the array
+console.log(`greatest decrease: ${greatestDec}`);
 
-// console.log(`Current amount: ${currentAmt}`);
-// console.log(`Next amount: ${nextAmt}`);
-
-
-// Greatest decrease
 
 // Final output
 console.log (`
@@ -176,6 +174,6 @@ Financial Analysis
 Total months: ${totalMonths}
 Total: $${Intl.NumberFormat('en-US').format(total)}
 Average Change: ${avgChange}
-Greatest Increase in Profits/Losses:
-Greatest Decrease in Profits/Losses:
+Greatest Increase in Profits/Losses: $${Intl.NumberFormat('en-US').format(greatestInc)}
+Greatest Decrease in Profits/Losses: $${Intl.NumberFormat('en-US').format(greatestDec)}
 `);
