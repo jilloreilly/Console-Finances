@@ -3,7 +3,7 @@ Challenge 4 - Javascript - Front-end Web Dev Bootcamp
 
 ## Description
 
-This portfolio webpage showcases the front-end development skills I have gained through the Front-end web development bootcamp provided by EdX as well as my previous work as a web developer. This webpage has been refactored using the Bootstrap CSS Framework.
+This webpage showcases the Javascript skills I have gained from Module 4 of the Front-end Web Development Bootcamp. Various JavaScript methods have been utilised to analyse the given dataset and the resulting Financial Analysis is output to the console.
 
 
 ## Usage
@@ -20,9 +20,15 @@ This portfolio webpage showcases the front-end development skills I have gained 
 
 ## Credits
 
-Thank you to the following: 
+Thank you to the following:
 
-- W3C Schools for [CSS variables](https://www.w3schools.com/css/css3_variables.asp), [CSS combinators](https://www.w3schools.com/css/css_combinators.asp)
+- MDN web docs for:
+  - [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+  - [Math.max()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) 
+  - [Math.min()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
+  - [indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+  - [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)
+
 
 
 ## License
