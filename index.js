@@ -120,15 +120,15 @@ var finances = [
   // variables:
     // !total number of months
     // !rolling total of profits
-    // greatest increase (month & amount)
-    // greatest loss (month & amount)
+    // !greatest increase (month & amount)
+    // !greatest loss (month & amount)
     // !average of the changes
 
   // inside the loop: (for loop)
     //current data point
     // previous data point
 
-let totalMonths = finances.length;
+let totalMonths = finances.length; // total number of months
 
 let amount = 0;
 let total = 0;
@@ -140,7 +140,7 @@ for (let i = 0; i < finances.length; i++) {
   total += amount; 
 }
 
-let avgChange = (total/(totalMonths -1)).toFixed(2);
+let avgChange = (total/(totalMonths -1)).toFixed(2); // average of the changes
 
 // Greatest increase & decrease
 let currentAmt = 0;
@@ -148,23 +148,32 @@ let nextAmt = 0;
 let diffArray = [];
 let greatestInc = 0;
 let greatestDec = 0;
+let indexInc;
+let indexDec;
 
 for (let i = 0; i < (finances.length -1); i++) {
   const month = finances[i];
-
   currentAmt = month[1]; // Find current amount in array
-  console.log(`currentAmt: ${currentAmt}`);
+  //console.log(`currentAmt: ${currentAmt}`);
   nextAmt = finances[i + 1][1]; // Place next months profit/loss amount in variable 
-  console.log(`next amount ${nextAmt}`);
+  //console.log(`next amount ${nextAmt}`);
   let diff = nextAmt - currentAmt; // Subtract current amount from next amount and place in variable 
-  console.log(`diff: ${diff}`);
   diffArray.push(diff); // Place the difference into an array
 }
-console.log(diffArray);
+
+//console.log(`diffArray: ${diffArray}`);
 greatestInc = Math.max(...diffArray); // Find the max number in the array
-console.log(`greatest increase: ${greatestInc}`);
+//console.log(`greatest increase: ${greatestInc}`);
+indexInc = diffArray.indexOf(greatestInc); //Find the position of greatest increase in diff array 
+//console.log(`indexInc: ${indexInc}`);
+monthInc = finances[indexInc + 1][0]; // Find the month at that index
+//console.log(`monthInc: ${monthInc}`);
 greatestDec = Math.min(...diffArray); // Find the min number in the array
-console.log(`greatest decrease: ${greatestDec}`);
+//console.log(`greatest decrease: ${greatestDec}`);
+indexDec = diffArray.indexOf(greatestDec); // Find the position of the greatest decrease in the diff array
+//console.log(`indexDec: ${indexDec}`);
+monthDec = finances[indexDec +1][0]; // Find the month at that index
+//console.log(`monthDec: ${monthDec}`);
 
 
 // Final output
@@ -173,7 +182,7 @@ Financial Analysis
 -------------------
 Total months: ${totalMonths}
 Total: $${Intl.NumberFormat('en-US').format(total)}
-Average Change: ${avgChange}
-Greatest Increase in Profits/Losses: $${Intl.NumberFormat('en-US').format(greatestInc)}
-Greatest Decrease in Profits/Losses: $${Intl.NumberFormat('en-US').format(greatestDec)}
+Average Change: $${Intl.NumberFormat('en-US').format(avgChange)}
+Greatest Increase in Profits/Losses: ${monthInc} $${Intl.NumberFormat('en-US').format(greatestInc)}
+Greatest Decrease in Profits/Losses: ${monthDec} $${Intl.NumberFormat('en-US').format(greatestDec)}
 `);
