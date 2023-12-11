@@ -3,7 +3,17 @@ Challenge 4 - Javascript - Front-end Web Dev Bootcamp
 
 ## Description
 
-This webpage showcases the Javascript skills I have gained from Module 4 of the Front-end Web Development Bootcamp. Various JavaScript methods have been utilised to analyse the given dataset and the resulting Financial Analysis is output to the console.
+This webpage showcases the Javascript skills I have gained from Module 4 of the Front-end Web Development Bootcamp. Various JavaScript methods have been utilised to analyse the given dataset and the resulting Financial Analysis is output to the console:
+
+* The total number of months included in the dataset.
+
+* The net total amount of Profit/Losses over the entire period.
+
+* The average of the **changes** in Profit/Losses over the entire period.
+  
+* The greatest increase in Profit/Losses (date and amount) over the entire period.
+
+* The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
 
 ## Usage
