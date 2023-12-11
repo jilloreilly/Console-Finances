@@ -189,7 +189,7 @@ Financial Analysis
 -------------------
 Total months: ${totalMonths}
 Total: $${Intl.NumberFormat('en-US').format(total)}
-Average Change: $${Intl.NumberFormat('en-US').format(avgChange)}
+Average Change: ${avgChange}
 Greatest Increase in Profits/Losses: ${monthInc} $${Intl.NumberFormat('en-US').format(greatestInc)}
 Greatest Decrease in Profits/Losses: ${monthDec} $${Intl.NumberFormat('en-US').format(greatestDec)}
 `);
