@@ -130,6 +130,7 @@ var finances = [
 
 let totalMonths = finances.length; // total number of months
 
+// Rolling total of profits
 let amount = 0;
 let total = 0;
 
@@ -139,8 +140,6 @@ for (let i = 0; i < finances.length; i++) {
   amount = month[1];
   total += amount; 
 }
-
-let avgChange = (total/(totalMonths -1)).toFixed(2); // average of the changes
 
 // Greatest increase & decrease
 let currentAmt = 0;
@@ -161,7 +160,6 @@ for (let i = 0; i < (finances.length -1); i++) {
   diffArray.push(diff); // Place the difference into an array
 }
 
-//console.log(`diffArray: ${diffArray}`);
 greatestInc = Math.max(...diffArray); // Find the max number in the array
 //console.log(`greatest increase: ${greatestInc}`);
 indexInc = diffArray.indexOf(greatestInc); //Find the position of greatest increase in diff array 
@@ -175,6 +173,14 @@ indexDec = diffArray.indexOf(greatestDec); // Find the position of the greatest 
 monthDec = finances[indexDec +1][0]; // Find the next month at that index
 //console.log(`monthDec: ${monthDec}`);
 
+// Average of the changes
+let sumDiff = 0;
+
+for (let i = 0; i < diffArray.length; i++) {
+  sumDiff += diffArray[i]; // Add the total of the diffArray
+}
+
+let avgChange = (sumDiff/(totalMonths -1)).toFixed(2); // average of the changes
 
 // Final output
 console.log (`
