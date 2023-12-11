@@ -152,26 +152,27 @@ let indexDec;
 
 for (let i = 0; i < (finances.length -1); i++) {
   const month = finances[i];
+  
   currentAmt = month[1]; // Find current amount in array
-  //console.log(`currentAmt: ${currentAmt}`);
+  
   nextAmt = finances[i + 1][1]; // Place next months profit/loss amount in variable 
-  //console.log(`next amount ${nextAmt}`);
+  
   let diff = nextAmt - currentAmt; // Subtract current amount from next amount and place in variable 
+  
   diffArray.push(diff); // Place the difference into an array
 }
 
 greatestInc = Math.max(...diffArray); // Find the max number in the array
-//console.log(`greatest increase: ${greatestInc}`);
+
 indexInc = diffArray.indexOf(greatestInc); //Find the position of greatest increase in diff array 
-//console.log(`indexInc: ${indexInc}`);
+
 monthInc = finances[indexInc + 1][0]; // Find the next month at that index
-//console.log(`monthInc: ${monthInc}`);
+
 greatestDec = Math.min(...diffArray); // Find the min number in the array
-//console.log(`greatest decrease: ${greatestDec}`);
+
 indexDec = diffArray.indexOf(greatestDec); // Find the position of the greatest decrease in the diff array
-//console.log(`indexDec: ${indexDec}`);
+
 monthDec = finances[indexDec +1][0]; // Find the next month at that index
-//console.log(`monthDec: ${monthDec}`);
 
 // Average of the changes
 let sumDiff = 0;
